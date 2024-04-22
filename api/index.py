@@ -1,4 +1,5 @@
 from flask import Flask
+from threading import Thread
 import time
 
 # Example code
@@ -16,6 +17,10 @@ def about():
 start_time = time.time()
 t = 0
 
-while True:
-    time.sleep(10)
-    t = time.time() - start_time
+def main():
+    while True:
+        time.sleep(10)
+        t = time.time() - start_time
+
+thread = Thread(target=main)
+thread.start()
