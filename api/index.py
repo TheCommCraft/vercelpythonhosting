@@ -27,10 +27,12 @@ def about():
 def secret_():
     response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
     file = io.BytesIO(response.content)
-    return send_file(
+    resp = send_file(
         file,
         mimetype='image/gif'
     )
+    resp.headers["Origin"] = "https://scratch.mit.edu/project/1016006035"
+    return resp
 
 @app.route("/keep_alive/")
 def keep_alive():
