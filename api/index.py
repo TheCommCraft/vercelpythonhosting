@@ -1,6 +1,6 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
 from threading import Thread
-import time, requests
+import time, requests, io
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0',
@@ -19,13 +19,18 @@ headers = {
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World! This is TheCommCraft'
-
 @app.route('/about/')
 def about():
     return f'About'
+
+@app.route("/")
+def secret_():
+    response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
+    file = io.BytesIO(response.content)
+    return send_file(
+        file,
+        mimetype='image/gif'
+    )
 
 @app.route("/keep_alive/")
 def keep_alive():
