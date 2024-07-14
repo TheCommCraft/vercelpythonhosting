@@ -35,7 +35,7 @@ def secret_():
     return resp
 
 @app.route("/super_secret_url/")
-def secret_():
+def secret_again():
     response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
     file = io.BytesIO(response.content)
     resp = send_file(
@@ -47,7 +47,7 @@ def secret_():
     return resp
 
 @app.route("/elsewhere/")
-def secret_():
+def secret_again_again():
     response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
     file = io.BytesIO(response.content)
     resp = send_file(
