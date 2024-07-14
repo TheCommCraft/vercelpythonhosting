@@ -43,7 +43,7 @@ def secret_again():
         mimetype='image/gif'
     )
     resp.headers["Origin"] = "Not Origin, look elsewhere"
-    resp.headers["elsewhere"] = "Wow! You are good. Comment \"What the origin???\" on @TheCommCraft on Scratch to find the next clue."
+    resp.set_cookie("elsewhere", "Wow! You are good. Comment \"What the origin???\" on @TheCommCraft on Scratch to find the next clue.")
     return resp
 
 @app.route("/elsewhere/")
