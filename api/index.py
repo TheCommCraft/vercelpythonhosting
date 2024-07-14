@@ -34,6 +34,29 @@ def secret_():
     resp.headers["Origin"] = "https://scratch.mit.edu/project/1016006035"
     return resp
 
+@app.route("/super_secret_url/")
+def secret_():
+    response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
+    file = io.BytesIO(response.content)
+    resp = send_file(
+        file,
+        mimetype='image/gif'
+    )
+    resp.headers["Origin"] = "Not Origin, look elsewhere"
+    resp.headers["elsewhere"] = "Wow! You are good. Comment \"What the origin???\" on @TheCommCraft on Scratch to find the next clue."
+    return resp
+
+@app.route("/elsewhere/")
+def secret_():
+    response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
+    file = io.BytesIO(response.content)
+    resp = send_file(
+        file,
+        mimetype='image/gif'
+    )
+    resp.headers["Origin"] = "Clever, but not quite enough."
+    return resp
+
 @app.route("/keep_alive/")
 def keep_alive():
     response = requests.get(request.args.get("url") or 'https://abrupt-imaginary-text.glitch.me/hello', headers=headers)
