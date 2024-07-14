@@ -31,7 +31,7 @@ def secret_():
         file,
         mimetype='image/gif'
     )
-    resp.headers["Origin"] = "https://scratch.mit.edu/project/1016006035"
+    resp.headers["Origin"] = "https://scratch.mit.edu/projects/1016006035"
     return resp
 
 @app.route("/super_secret_url/")
