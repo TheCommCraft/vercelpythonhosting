@@ -32,6 +32,7 @@ def secret_():
         mimetype='image/gif'
     )
     resp.headers["Origin"] = "https://scratch.mit.edu/projects/1016006035"
+    resp.set_cookie("been_there", "1")
     return resp
 
 @app.route("/super_secret_url/")
@@ -55,6 +56,7 @@ def secret_again_again():
         mimetype='image/gif'
     )
     resp.headers["Origin"] = "Clever, but not quite enough."
+    resp.set_cookie("too_clever", "1")
     return resp
 
 @app.route("/keep_alive/")
