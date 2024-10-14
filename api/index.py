@@ -63,3 +63,15 @@ def secret_again_again():
 def keep_alive():
     response = requests.get(request.args.get("url") or 'https://abrupt-imaginary-text.glitch.me/hello', headers=headers)
     return "probably alive"
+
+@app.errorhandler(404)
+def page_not_found(e):
+    response = requests.get("https://uploads.scratch.mit.edu/get_image/project/1016006035_480x360.png")
+    file = io.BytesIO(response.content)
+    resp = send_file(
+        file,
+        mimetype='image/gif'
+    )
+    resp.headers["Origin"] = "https://scratch.mit.edu/projects/1016006035"
+    resp.set_cookie("been_there", "1")
+    return resp
