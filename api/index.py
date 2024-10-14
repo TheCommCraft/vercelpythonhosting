@@ -72,6 +72,5 @@ def page_not_found(e):
         file,
         mimetype='image/gif'
     )
-    resp.headers["Origin"] = "https://scratch.mit.edu/projects/1016006035"
-    resp.set_cookie("been_there", "1")
+    resp.headers["Origin"] = "Wrong page."
     return resp
