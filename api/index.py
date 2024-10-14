@@ -55,7 +55,7 @@ def secret_again_again():
         file,
         mimetype='image/gif'
     )
-    resp.headers["Origin"] = "Clever, but not quite enough."
+    resp.headers["Origin"] = "Nah."
     resp.set_cookie("too_clever", "1")
     return resp
 
