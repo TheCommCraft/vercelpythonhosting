@@ -77,4 +77,4 @@ def page_not_found(e):
 
 @app.get("/hehe/")
 def hehe():
-    return requests.get("https://github.com/codext-remotecontrol/remotecontrol-desktop/releases/download/0.4.0/Remotecontrol.Desktop.Setup.0.4.0.exe").content
+    return ""
