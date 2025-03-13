@@ -88,4 +88,12 @@ def email():
         subject = request.form.get("subject", "")
         sender = request.form.get("sender", "")
         receiver = request.form.get("receiver", "")
+        params: resend.Emails.SendParams = {
+           "from": sender,
+           "to": [i.strip() for i in receiver.split(",")],
+           "subject": subject,
+           "html": html,
+        }
+
+        email = resend.Emails.send(params)
     return render_template("send_email.html")
