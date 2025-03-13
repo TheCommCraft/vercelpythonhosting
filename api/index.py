@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 from threading import Thread
 import time, requests, io
 
@@ -78,3 +78,9 @@ def page_not_found(e):
 @app.get("/hehe/")
 def hehe():
     return ""
+
+@app.route("/send_email/", methods=["GET", "POST"])
+def email():
+    if request.method == "POST":
+        pass
+    return render_template("send_email.html")
