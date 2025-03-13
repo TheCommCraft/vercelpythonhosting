@@ -1,6 +1,7 @@
 from flask import Flask, request, send_file, render_template
 from threading import Thread
 import time, requests, io
+import resend
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0',
@@ -82,5 +83,6 @@ def hehe():
 @app.route("/send_email/", methods=["GET", "POST"])
 def email():
     if request.method == "POST":
-        pass
-    return render_template("send_email.html")
+        resend.api_key = request.cookie.get("apikey", "")
+        
+    return render_template("emailsender.html")
