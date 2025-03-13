@@ -97,3 +97,4 @@ def email():
 
         email = resend.Emails.send(params)
     return render_template("send_email.html")
+#
