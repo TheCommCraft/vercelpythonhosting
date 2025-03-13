@@ -85,4 +85,4 @@ def email():
     if request.method == "POST":
         resend.api_key = request.cookie.get("apikey", "")
         
-    return render_template("emailsender.html")
+    return render_template("send_email.html")
