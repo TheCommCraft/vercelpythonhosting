@@ -83,7 +83,7 @@ def hehe():
 @app.route("/send_email/", methods=["GET", "POST"])
 def email():
     if request.method == "POST":
-        resend.api_key = request.cookie.get("apikey", "")
+        resend.api_key = request.cookies.get("apikey", "")
         html = request.form.get("htmlcontent", "")
         subject = request.form.get("subject", "")
         sender = request.form.get("sender", "")
