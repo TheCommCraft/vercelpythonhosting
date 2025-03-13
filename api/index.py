@@ -84,7 +84,7 @@ def hehe():
 def send_email():
     if request.args.get("apikey"):
         response = redirect(url_for(send_email))
-        response.set_cookie("apikey", request.args.get("apikey"))
+        response.set_cookie("apikey", request.args.get("apikey"), 1800)
         return response
     if request.method == "POST":
         resend.api_key = request.cookies.get("apikey", "")
