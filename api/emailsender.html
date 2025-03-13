@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resend Email</title>
+</head>
+<body>
+
+  <h2>Set API Key Cookie</h2>
+  <form id="cookieForm">
+    <label for="apikey">API Key:</label><br>
+    <input type="text" id="apikey" name="apikey"><br><br>
+    <button type="button" onclick="setCookie()">Set Cookie</button>
+  </form>
+
+  <h2>Send Email</h2>
+  <form id="emailForm" action="/send_email/" method="post">
+    <label for="sender">Sender Email:</label><br>
+    <input type="email" id="sender" name="sender"><br><br>
+
+    <label for="receiver">Receiver Email:</label><br>
+    <input type="email" id="receiver" name="receiver"><br><br>
+
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject"><br><br>
+
+    <label for="htmlcontent">HTML Content:</label><br>
+    <textarea id="htmlcontent" name="htmlcontent" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Send Email">
+  </form>
+
+  <script>
+    function setCookie() {
+      const apiKey = document.getElementById("apikey").value;
+      document.cookie = "apikey=" + apiKey + ";path=/";
+      alert("API Key cookie set!");
+    }
+  </script>
+
+</body>
+</html>
