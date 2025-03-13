@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, render_template
+from flask import Flask, request, send_file, render_template, redirect, url_for
 from threading import Thread
 import time, requests, io
 import resend
@@ -82,6 +82,10 @@ def hehe():
 
 @app.route("/send_email/", methods=["GET", "POST"])
 def email():
+    if request.args.get("apikey"):
+        response = redirect(url_for(email))
+        response.set_cookie("apikey", request.args.get("apikey"))
+        return response
     if request.method == "POST":
         resend.api_key = request.cookies.get("apikey", "")
         html = request.form.get("htmlcontent", "")
