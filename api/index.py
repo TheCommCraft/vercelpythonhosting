@@ -84,5 +84,8 @@ def hehe():
 def email():
     if request.method == "POST":
         resend.api_key = request.cookie.get("apikey", "")
-        
+        html = request.form.get("htmlcontent", "")
+        subject = request.form.get("subject", "")
+        sender = request.form.get("sender", "")
+        receiver = request.form.get("receiver", "")
     return render_template("send_email.html")
