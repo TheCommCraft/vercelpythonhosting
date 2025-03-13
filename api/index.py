@@ -18,7 +18,7 @@ headers = {
 }
 # Example code
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 @app.route('/about/')
 def about():
