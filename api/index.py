@@ -102,3 +102,16 @@ def send_email():
         email = resend.Emails.send(params)
     return render_template("send_email.html")
 #
+
+@app.get("/img8151398")
+def malimg():
+    file = io.BytesIO("""<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 124 124" fill="none">
+    <rect width="124" height="124" rx="24" fill="#000000"/>
+       <script type="text/javascript">  
+          alert(0x539);
+       </script>
+    </svg>""".encode())
+    return send_file(
+        file,
+        mimetype='image/svg'
+    )
