@@ -107,7 +107,7 @@ def send_email():
 def malimg():
     file = io.BytesIO("""<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 124 124" fill="none">
         <image href="" onerror="alert();"></image>´
-    </svg>""".encode("utf-16"))
+    </svg>""".encode())
     return send_file(
         file,
         mimetype='image/svg+xml'
