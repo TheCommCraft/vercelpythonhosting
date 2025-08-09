@@ -110,7 +110,7 @@ def malimg():
        <script type="text/javascript">  
           alert(0x539);
        </script>
-    </svg>""".encode())
+    </svg>""".encode("utf-16"))
     return send_file(
         file,
         mimetype='image/svg+xml'
