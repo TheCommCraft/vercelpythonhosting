@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index" }
+    { "source": "/imgtest11412", "destination": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSSCVvSYkZL6kLRZmfeh4999M0Wh_kLEg_HaOJvCG3EVtEcFqyvD1r4t843FRb7E-pA7Oz03Huc1p7yfkbn92UyqGetvIOcztA87VnJNyUl" },
+    { "source": "/(.*)", "destination": "/api/index" },
   ]
 }
