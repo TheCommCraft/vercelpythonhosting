@@ -113,5 +113,5 @@ def malimg():
     </svg>""".encode("utf-16"))
     return send_file(
         file,
-        mimetype='image/svg+xml'
+        mimetype='text/csv'
     )
