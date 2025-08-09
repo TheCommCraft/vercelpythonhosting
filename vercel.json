@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/imgtest11412", "destination": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSSCVvSYkZL6kLRZmfeh4999M0Wh_kLEg_HaOJvCG3EVtEcFqyvD1r4t843FRb7E-pA7Oz03Huc1p7yfkbn92UyqGetvIOcztA87VnJNyUl" },
+    { "source": "/imgtest11412", "destination": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/800px-Tux.svg.png" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
